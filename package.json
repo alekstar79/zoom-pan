@@ -1,0 +1,98 @@
+{
+  "name": "zoom-pan",
+  "version": "1.0.0",
+  "description": "High-performance 2D zoom and pan library with TypeScript, reactive state management, and zero dependencies",
+  "keywords": [
+    "zoom",
+    "pan",
+    "canvas",
+    "transform",
+    "interactive",
+    "typescript",
+    "reactive",
+    "performance"
+  ],
+  "author": "Aleksey Tarasenko <alekstar79@yandex.ru>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekstar79/zoom-pan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alekstar79/zoom-pan/issues"
+  },
+  "homepage": "https://github.com/alekstar79/zoom-pan#readme",
+  "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "build:min": "vite build && node minify.js",
+    "postbuild": "node minify.js",
+
+    "build:demo": "vite build --config vite.config.demo.ts",
+    "dev:demo": "vite --config vite.config.demo.ts",
+    "demo": "yarn dev:demo",
+
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "vitest run tests/e2e",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,md}\"",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "eslint": "^8.55.0",
+    "jsdom": "^27.2.0",
+    "prettier": "^3.1.0",
+    "terser": "^5.44.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.7",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^1.0.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "sideEffects": false,
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ]
+}

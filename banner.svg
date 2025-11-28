@@ -1,0 +1,96 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a0a1f"/>
+      <stop offset="50%" stop-color="#1a0a3a"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff">
+        <animate attributeName="stop-color" values="#00d4ff;#7c3aed;#00d4ff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#7c3aed">
+        <animate attributeName="stop-color" values="#7c3aed;#00d4ff;#7c3aed" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+
+  <g opacity="0.3" stroke="#333" stroke-width="1">
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none"/>
+    </pattern>
+    <rect width="1920" height="1080" fill="url(#grid)"/>
+  </g>
+
+  <g transform="translate(500, 220)">
+    <rect x="-20" y="-20" width="1280" height="720" rx="20"
+          fill="none" stroke="url(#neon)" stroke-width="6" filter="url(#glow)">
+      <animate attributeName="stroke-dasharray" values="0 400;400 0" dur="3s" repeatCount="indefinite"/>
+    </rect>
+
+    <text x="640" y="40" font-family="Arial,sans-serif" font-size="28" fill="rgb(0,212,255)" font-weight="bold" text-anchor="middle">
+      Smooth transformations TypeScript 60fps
+    </text>
+
+    <g transform="translate(200, 150)">
+      <rect x="0" y="0" width="800" height="600" rx="12"
+            fill="#1a1a2e" stroke="#00d4ff" stroke-width="3" opacity="0.9">
+        <animateTransform attributeName="transform" type="scale" values="1 1;1.05 1.05;1 1"
+                         dur="3s" repeatCount="indefinite"/>
+      </rect>
+
+      <circle cx="150" cy="150" r="40" fill="#7c3aed" opacity="0.8">
+        <animate attributeName="cy" values="150;100;150" dur="4s" repeatCount="indefinite"/>
+      </circle>
+
+      <rect x="500" y="100" width="120" height="80" rx="8" fill="#00d4ff" opacity="0.7">
+        <animate attributeName="x" values="500;550;500" dur="3s" repeatCount="indefinite"/>
+      </rect>
+
+      <path d="M 300 400 Q 350 350 400 400" stroke="#fff" stroke-width="4" fill="none" opacity="0.6">
+        <animate attributeName="d" values="M 300 400 Q 350 350 400 400;M 300 450 Q 350 400 400 450;M 300 400 Q 350 350 400 400" dur="5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <g transform="translate(920, 100)">
+      <rect x="0" y="0" width="260" height="520" rx="12" fill="#0f0f23" stroke="#444" stroke-width="2"/>
+      <text x="20" y="40" font-family="monospace" font-size="24" font-weight="bold" fill="#00d4ff">STATS</text>
+      <text x="20" y="80" font-family="monospace" font-size="18" fill="#7c3aed">scale: 1.00</text>
+      <text x="20" y="110" font-family="monospace" font-size="18" fill="#7c3aed">translateX: 67px</text>
+      <text x="20" y="140" font-family="monospace" font-size="18" fill="#7c3aed">translateY: 50px</text>
+      <text x="20" y="200" font-family="monospace" font-size="18" fill="#00d4ff">Controls:</text>
+      <text x="20" y="230" font-family="monospace" font-size="14" fill="#666">Wheel Zoom</text>
+      <text x="20" y="255" font-family="monospace" font-size="14" fill="#666">Pan Drag</text>
+      <text x="20" y="280" font-family="monospace" font-size="14" fill="#666">Fit Content</text>
+    </g>
+  </g>
+
+  <text x="960" y="90" font-family="Arial,sans-serif" font-size="72" font-weight="bold" fill="#00d4ff" text-anchor="middle">
+    Canvas Zoom Pan
+  </text>
+
+  <rect x="0" y="1020" width="1920" height="60" fill="#000" opacity="0.8"/>
+  <text x="960" y="1055" font-family="monospace" font-size="20" fill="#00d4ff" text-anchor="middle">
+    api.panTo x y scale github.com/alekstar79
+  </text>
+
+  <circle cx="100" cy="100" r="2" fill="#00d4ff" opacity="0.6">
+    <animate attributeName="cx" values="100;1200;100" dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="100;500;100" dur="15s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1800" cy="200" r="3" fill="#7c3aed" opacity="0.7">
+    <animate attributeName="cx" values="1800;700;1800" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="200;800;200" dur="18s" repeatCount="indefinite"/>
+  </circle>
+</svg>
