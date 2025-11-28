@@ -1,7 +1,7 @@
 {
   "name": "zoom-pan",
   "version": "1.0.0",
-  "description": "High-performance 2D zoom and pan library with TypeScript, reactive state management, and zero dependencies",
+  "description": "High-performance 2D zoom and pan library with TypeScript and zero dependencies",
   "keywords": [
     "zoom",
     "pan",

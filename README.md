@@ -7,7 +7,7 @@
 [![Version](https://img.shields.io/badge/Version-1.0.0-orange)]()
 [![Coverage](https://img.shields.io/badge/Coverage-90%25-green)]()
 
-A high-performance, TypeScript-first library for 2D zoom and pan transformations in the browser. Built with reactive state management, batched updates for smooth animations, and a clean, composable API.
+A high-performance, TypeScript-first library for 2D zoom and pan transformations in the browser.
 
 ![Zoom Pan](banner.svg)
 
